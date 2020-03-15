@@ -82,12 +82,14 @@ complete_data
 #Find missing values
 sum(is.na(managers$Age))
 
-install.packages("mice")
+install.packages("mice", dependencies = TRUE)
 library("mice")
 md.pattern(managers)
 
-install.packages("VIM")
+install.packages("VIM", dependencies = TRUE)
 library(VIM)
 missing_values <- aggr(managers,
                        prop = FALSE,
                        numbers = TRUE)
+
+
